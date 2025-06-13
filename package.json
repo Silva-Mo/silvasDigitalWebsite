@@ -1,24 +1,24 @@
 {
-  "name": "todo-list",
-  "version": "1.0.1",
-  "description": "a JS skills improvement project",
+  "name": "silvas-digital",
+  "version": "1.0.0",
+  "description": "official website of Silvas Digital",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --open --config webpack.dev.js",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git subtree push --prefix dist origin deploy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Silva-Mo/Silva-Restaurant.git"
+    "url": "git+https://github.com/Silva-Mo/silvasDigitalWebsite"
   },
   "author": "Silva-Mo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Silva-Mo/Silva-Restaurant/issues"
+    "url": "https://github.com/Silva-Mo/silvasDigitalWebsite/issues"
   },
-  "homepage": "https://github.com/Silva-Mo/Silva-Restaurant#readme",
+  "homepage": "https://github.com/Silva-Mo/silvasDigitalWebsite#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.0.0",
