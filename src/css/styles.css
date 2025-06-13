@@ -24,7 +24,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 85px; /* Increased to match navbar height + some spacing */
+    padding-top: 75px; /* Increased to match navbar height + some spacing */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -626,6 +627,163 @@ i.bi {
     transition: width 0.05s ease;
 }
 
+/* Services Page Specific Styles */
+.services-hero {
+    background: url('../imgs/background2.svg') no-repeat center center;
+    background-size: cover;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0; 
+    width: 100%; 
+}
+
+.services-hero .container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+
+.services-hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-hero h1 {
+    font-size: 3.6rem;
+    background: linear-gradient(rgb(255, 255, 255), rgb(175, 175, 175));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px #ffffff6e;
+    position: relative;
+}
+
+.services-hero h1::after {
+    content: '';
+    display: block;
+    margin: 24px auto 0 auto;
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgb(255,255,255), rgb(175,175,175));
+}
+
+.services-hero .hero-description {
+    color: #f3f3f3;
+}
+
+.services-hero p {
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.pricing-section {
+    background: linear-gradient(180deg, #ffffff00 0%, #f8f9fa00 100%);
+    padding: 80px 0;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--color-blue-light);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--color-blue-light);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-header h3 {
+    color: var(--color-blue-dark);
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+.price {
+    margin: 20px 0;
+}
+
+.price .currency {
+    font-size: 1.5rem;
+    color: var(--color-grey-dark);
+    vertical-align: top;
+}
+
+.price .amount {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+}
+
+.price .period {
+    font-size: 1rem;
+    color: var(--color-grey-light);
+}
+
+.pricing-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.pricing-features li {
+    margin: 15px 0;
+    color: var(--color-grey-dark);
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features li i {
+    color: var(--color-blue-light) !important;
+    margin-right: 10px;
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.pricing-footer .btn-custom {
+    width: 100%;
+    padding: 12px;
+}
+
 @media (max-width: 768px) {
     body {
         padding-top: 75px; /* Match navbar height exactly */
@@ -707,6 +865,40 @@ i.bi {
     .navbar-toggler:focus {
         box-shadow: none;
         outline: none;
+    }
+
+    .services-hero .hero-content {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: linear-gradient(90deg, rgb(61, 60, 60) 0%, rgb(0, 69, 160) 100%);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav {
+        padding: 10px 0;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1rem !important;
+        border-radius: 5px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: none;
     }
 }
 
