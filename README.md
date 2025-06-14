@@ -1,2 +1,0 @@
-# silvasDigitalWebsite
-my business website
