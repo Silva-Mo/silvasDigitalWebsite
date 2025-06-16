@@ -698,6 +698,7 @@ i.bi {
     font-size: 1.5rem;
     line-height: 1.8;
     margin-bottom: 0;
+    padding-top: 0;
 }
 
 .pricing-section {
@@ -705,11 +706,18 @@ i.bi {
     padding: 80px 0;
 }
 
+.pricing-section .container {
+    max-width: 1000px;  /* Reduce overall container width */
+    margin: 0 auto;
+}
+
 .pricing-card {
     background: white;
     border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    padding: 30px 50px;
+    max-width: 95%;   /* Reduce card width */
+    margin: 0 auto 2rem;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
     position: relative;
     border: 1px solid rgba(0,0,0,0.05);
@@ -722,29 +730,54 @@ i.bi {
 }
 
 .pricing-card.featured {
-    border: 2px solid var(--color-blue-light);
-    transform: scale(1.05);
+    position: relative;  
+    border: 3px solid #fad714 !important;  
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.1),
+        inset 0 0 80px rgba(244, 162, 97, 0.05);
 }
 
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+
+.pricing-section .pricing-card.featured:hover {
+    border: 3px solid #fad714 !important;
+    box-shadow: 
+        0 12px 48px rgba(0, 0, 0, 0.15),
+        inset 0 0 80px rgba(244, 162, 97, 0.08);
 }
 
 .popular-badge {
     position: absolute;
     top: -15px;
     right: 20px;
-    background: var(--color-blue-light);
-    color: white;
+    background-color: #fde34e; /* Sun-Gold */
+    color: #000;               /* Black text */
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: bold;
+    border: px solid #fde34e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.pricing-header {
-    text-align: center;
-    margin-bottom: 30px;
+.pricing-card .row {
+    display: flex;
+    align-items: stretch; /* Make both columns equal height */
+}
+
+.pricing-card .col-lg-4 {
+    display: flex;
+    align-items: center;
+}
+
+.pricing-card .pricing-header {
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Vertically center content */
+    margin-bottom: 1.5rem;
+    height: 100%;
+    max-height: 100%;
 }
 
 .pricing-header h3 {
@@ -795,11 +828,145 @@ i.bi {
 .pricing-footer {
     text-align: center;
     margin-top: auto;
+    margin-top: 1.5rem;
 }
 
 .pricing-footer .btn-custom {
+    width: auto;        /* Reset button width */
+    min-width: 150px;   /* Set minimum width */
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.pricing-footer .btn-custom:hover {
+    background-color: transparent;
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 2px var(--color-blue);
+}
+
+.social-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    width: 90%;
+    height: 90%;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 3px;
+    margin-top: 7px;
+}
+
+.social-icons-grid i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    height: 90%;
+    width: 90%;
+    color: var(--color-blue-light) !important;
+    transition: background-color 0.3s ease;
+}
+
+.service-description {
+    margin-top: 20px;
+    padding-top: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-grey-dark);
+    margin-bottom: 20px;
+}
+
+.pricing-card .btn-custom:hover,
+.pricing-card .btn-custom:focus {
+    background-color: transparent;
+    color: var(--color-blue-dark);
+    border-color: var(--color-blue-dark);
+    box-shadow: none;
+}
+
+.price-note{
+    display: block;
+    margin-top: 15px;
+    color: grey;
+    font-size: 0.7em;
+    font-weight: 900;
+}
+
+.pricing-card .row {
+    align-items: start;
+}
+
+.pricing-card .col-lg-4 {
+    flex: 0 0 auto;
+    width: 40%;
+}
+
+.pricing-card .col-lg-8 {
+    flex: 0 0 auto;
+    width: 55%;
+}
+
+/* Replace existing imp-notes styling with this */
+.imp-notes-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.1),
+        inset 0 0 80px rgba(255, 255, 255, 0.05);
+}
+
+.imp-note {
+    position: relative;
+    padding: 20px 0;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+
+.imp-note:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.imp-note:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 12px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+@media (max-width: 992px) {
+    .pricing-card .col-lg-4,
+    .pricing-card .col-lg-8 {
+        width: 100%;
+    }
+
+    .pricing-header{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pricing-card{
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -889,6 +1056,11 @@ i.bi {
         flex-direction: column;
         padding: 0 20px;
     }
+    .pricing-header{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 991px) {
@@ -918,7 +1090,13 @@ i.bi {
         background: rgba(255, 255, 255, 0.1);
         border-bottom: none;
     }
+    .pricing-header{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
 
 
 
