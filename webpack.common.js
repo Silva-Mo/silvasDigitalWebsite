@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         index: './src/js/index.js',
+        about: './src/js/about.js',
         services: './src/js/services.js',
         contact: './src/js/contact.js'
     },
@@ -17,6 +18,11 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
             chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/about.html',
+            filename: 'about.html',
+            chunks: ['about']
         }),
         new HtmlWebpackPlugin({
             template: './src/services.html',
