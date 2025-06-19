@@ -5,6 +5,7 @@ import '../css/styles.css';
 import 'bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'animate.css';
 
 
 export const initializeCommon = () => {
