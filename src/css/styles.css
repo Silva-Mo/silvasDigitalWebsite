@@ -213,6 +213,17 @@ h1, h2, h3, h4, h5, h6,
     border: none;
     height: 100%;
     border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -237,6 +248,8 @@ h1, h2, h3, h4, h5, h6,
     position: relative;
     padding-bottom: 20px;
     margin-bottom: 50px;
+    font-size: 3.6rem;
+    color: white;
 }
 
 .section-title::after {
@@ -257,6 +270,24 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-about .text-primary-custom{
     color: white !important;
+}
+
+.btn-shadow{
+    color: white;
+    text-decoration: none;
+    font-family: "playfair";
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.btn-shadow:hover{
+    background-color: #00000011;
+    transform: scale(1.1);
+}
+
+.btn-shadow:active{
+    background-color: #00000011;
 }
 
 .footer {
@@ -308,6 +339,10 @@ h1, h2, h3, h4, h5, h6,
 .footer a:hover {
     color: white;
     text-decoration: underline;
+}
+
+.footer .main-contact {
+    font-size: 1.5rem
 }
 
 .social-icons a {
@@ -450,14 +485,6 @@ i.bi {
 
 .bg-primary-custom {
     background-color: rgb(25, 135, 84);
-}
-
-.section-title{
-    font-size: 3.6rem;
-    background: linear-gradient(rgb(255, 255, 255), rgb(175, 175, 175));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 #usp.py-6.bg-light{
@@ -1356,23 +1383,69 @@ i.bi {
     box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
 }
 
+@media (max-width: 1200px) {
+    .hero-section h1{
+        font-size: 3.2rem;
+    }
+    .footer .main-contact {
+        font-size: 1.2rem;
+    }
+}
 
-@media (max-width: 992px) {
+@media (max-width: 990px) {
+    :root{
+        font-size: 14px;
+    }
+
+    .hero-section h1{
+        font-size: 3rem;
+    }
+
+    .hero-section .container > div img{
+        width: 90%;
+    }
+
+    /* .pricing-section{
+        padding-left: 50px;
+        padding-right: 50px;
+    } */
+
+    .pricing-card{
+        font-size: 1.2rem;
+        width: 70%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .pricing-card li{
+        align-items: center;
+        justify-content: center;
+    }
+
     .pricing-card .col-lg-4,
     .pricing-card .col-lg-8 {
         width: 100%;
     }
 
-    .pricing-header{
+    .pricing-header .price{
         text-align: center;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0px;
     }
 
     .pricing-card{
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
+
+    .pricing-header{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
     .navbar-nav .nav-item {
         margin-bottom: 12px;
     }
@@ -1409,9 +1482,20 @@ i.bi {
     .nav-link:hover,
     .nav-link.active {
         border-bottom: transparent solid 2px;
-}}
+    }
+}
+
+@media ((max-width: 800px)){
+    :root{
+        font-size: 13px;
+    }
+}
 
 @media (max-width: 768px) {
+    :root{
+        font-size: 12px;
+    }
+
     body {
         padding-top: 75px; /* Match navbar height exactly */
     }
@@ -1432,7 +1516,10 @@ i.bi {
 
     .hero-section .container > div > .hero-image-container {
         order: 2;
-        margin-top: 40px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;   
+        align-self: start;
     }
 
     .hero-section .container > div img {
@@ -1502,11 +1589,17 @@ i.bi {
         flex-direction: column;
         padding: 0 20px;
     }
+
     .pricing-header{
         text-align: center;
         justify-content: center;
         align-items: center;
     }
+
+    .pricing-card{
+        width: 90%;
+    }
+
     .navbar-nav .nav-item {
         margin-bottom: 12px;
         border-bottom: transparent solid 2px;
@@ -1515,6 +1608,14 @@ i.bi {
     .nav-link:hover,
     .nav-link.active {
     border-bottom: transparent solid 2px;
+    }
+
+    .founder-card {
+        text-align: center;
+    }
+
+    .contact-section{
+        padding: 50px;
     }
 }
 
